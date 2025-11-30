@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      contents: read
       pull-requests: write
 
     steps:
@@ -23,13 +24,13 @@ jobs:
           # 当前 PR 编号
           github_pr_id: ${{ github.event.number }}
 
-          # 限定要审查的文件类型，按你项目改：
+          # 限定要审查的文件类型，按项目改：
           #files: "*.cpp,*.c,*.h,*.hpp,*xaml"
           files: >
               FastCopyShellExtension/**/*.cpp,
               FastCopyShellExtension/**/*.h,
               CopyFilesByRules/**/*.cpp,
-              FastCopy/*.cpp
+              FastCopy/*.cpp,
               FastCopy/*.h
       
           # 使用的模型名
