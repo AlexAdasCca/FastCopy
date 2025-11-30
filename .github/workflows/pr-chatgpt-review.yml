@@ -24,7 +24,13 @@ jobs:
           github_pr_id: ${{ github.event.number }}
 
           # 限定要审查的文件类型，按你项目改：
-          files: "*.cpp,*.c,*.h,*.hpp,*xaml"
-
+          #files: "*.cpp,*.c,*.h,*.hpp,*xaml"
+          files: >
+              FastCopyShellExtension/**/*.cpp,
+              FastCopyShellExtension/**/*.h,
+              CopyFilesByRules/**/*.cpp,
+              FastCopy/*.cpp
+              FastCopy/*.h
+      
           # 使用的模型名
           openai_model: "gpt-4.1"
