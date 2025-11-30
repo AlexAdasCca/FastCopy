@@ -1,0 +1,30 @@
+name: pr-chatgpt-review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  chatgpt-review:
+    name: ChatGPT code review
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Run ChatGPT PR Review
+        uses: agogear/chatgpt-pr-review@0.0.17
+        with:
+          # OpenAI key
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+          # 默认 GITHUB_TOKEN
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 当前 PR 编号
+          github_pr_id: ${{ github.event.number }}
+
+          # 限定要审查的文件类型，按你项目改：
+          files: "*.cpp,*.c,*.h,*.hpp,*xaml"
+
+          # 使用的模型名
+          openai_model: "gpt-4.1"
