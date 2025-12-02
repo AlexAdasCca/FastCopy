@@ -70,6 +70,7 @@
                         <x:String x:Key="MultipleWindowGlyph">&#xF7ED;</x:String>
                         <x:String x:Key="ThemeGlyph">&#xE790;</x:String>
                         <x:String x:Key="WindowBackgroundGlyph">&#xE81E;</x:String>
+                        <x:String x:Key="DevExprimentalGlyph">&#xEF3C;</x:String>
                         <x:String x:Key="DevModeGlyph">&#xEC7A;</x:String>
 
                         <Style x:Key="ToggleSwitchLeftLabelStyle" TargetType="ToggleSwitch">
@@ -507,16 +508,13 @@
 
                 <essential:SettingsCard x:Uid="DevExprimentalMethodItem">
                     <essential:SettingsCard.HeaderIcon>
-                        <FontIcon Glyph="{StaticResource WindowBackgroundGlyph}" />
+                        <FontIcon Glyph="{StaticResource DevExprimentalGlyph}" />
                     </essential:SettingsCard.HeaderIcon>
-                    <ComboBox
-                        xmlns:backdrops="using:Microsoft.UI.Composition.SystemBackdrops"
-                        essential:ComboBoxHelper.AcrylicWorkaround="True"
-                        SelectedIndex="{x:Bind ViewModel.BackgroundSelection, Mode=TwoWay}">
-                        <ComboBoxItem x:Uid="MicaItem" IsEnabled="{x:Bind backdrops:MicaController.IsSupported()}" />
-                        <ComboBoxItem x:Uid="AcrylicItem" />
-                        <ComboBoxItem x:Uid="CustomItem" />
-                    </ComboBox>
+                    <ToggleSwitch
+                        x:Name="DevExprimantalSwitch"
+                        Margin="0,0,-80,0"
+                        IsOn="True"
+                        Style="{StaticResource ToggleSwitchLeftLabelStyle}" />
                 </essential:SettingsCard>
 
                 <essential:SettingsExpander x:Uid="DevOptionsExpander">

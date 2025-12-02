@@ -159,6 +159,12 @@
   <data name="DestinationFolderContains.Text" xml:space="preserve">
     <value>Destination folder contains</value>
   </data>
+  <data name="DevExprimentalMethodItem.Description" xml:space="preserve">
+    <value>Use COM hook to intercept FileOperation of explorer</value>
+  </data>
+  <data name="DevExprimentalMethodItem.Header" xml:space="preserve">
+    <value>Exprimental Integration</value>
+  </data>
   <data name="DevModeSettingItem.Description" xml:space="preserve">
     <value>Open a console window for additional diagnostic information</value>
   </data>
